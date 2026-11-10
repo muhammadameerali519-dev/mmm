@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&family=Playfair+Display:ital,wght@0,400;1,400;1,700&family=Great+Vibes&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap');
+
+/* =========================================================================
+   Urdu Nastaleeq Font Configuration
+   To use your local Jameel Noori Nastaleeq font:
+   Place 'JameelNooriNastaleeq.ttf' inside the '/public/fonts/' folder:
+   Path: /public/fonts/JameelNooriNastaleeq.ttf
+   ========================================================================= */
+@font-face {
+  font-family: 'Jameel Noori Nastaleeq';
+  src: url('/fonts/JameelNooriNastaleeq.ttf') format('truetype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-script: "Great Vibes", cursive;
+
+  --color-romantic-bg: #FFF9F9;
+  --color-romantic-text: #4A4343;
+  --color-romantic-heading: #3A3333;
+  --color-romantic-paragraph: #6B5E5E;
+  --color-romantic-gold: #D4AF37;
+  --color-romantic-red: #E11D48;
+  --color-romantic-pink: #FFE4E6;
+  --color-romantic-purple: #F3E8FF;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-romantic-bg text-romantic-text font-sans overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif text-romantic-heading;
+  }
+}
+
+.gold-border {
+  @apply border border-romantic-gold/30;
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-sm border border-white shadow-sm;
+}
+
+.bold-title {
+  @apply text-[112px] leading-[0.85] font-serif italic tracking-tight;
+}
+
+.label-caps {
+  @apply text-[10px] uppercase tracking-[0.3em] font-bold;
+}
+
+/* Nastaleeq Typography Discipline: zero letter-spacing & generous line-height */
+.font-nastaleeq {
+  font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Alvi Nastaleeq', serif;
+  letter-spacing: 0 !important;
+  word-spacing: normal;
+  line-height: 2.3;
+}
+
